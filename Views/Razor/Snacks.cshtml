@@ -92,3 +92,44 @@
         
 <span>@listaDaStampare(listaNumeri)</span>
 <hr />
+
+<h2>Snack 5</h2>
+<p>
+    Stampare in pagina la data e l'ora attuale (usando la classe DateTime) con il formato anno-mese-giorno ore:minuti:secondi
+</p>
+
+
+@{
+    DateTime dataAttuale = DateTime.Now;
+}
+
+<h3>@dataAttuale.ToString("yyyy/MM/dd/ HH:mm:ss")</h3>
+<hr />
+
+<h2>Snack 6</h2>
+<p>
+    Partendo dalla data di oggi (usando la classe DateTime) stampare in pagina
+</p>
+<ul>
+    <li>
+        a. la data di 7 giorni fa
+    </li>
+    <li>
+       b. che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
+    </li>
+    <li>
+        c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
+    </li>
+</ul>
+
+@{
+    DateTime dataPassata = dataAttuale.AddDays(-7);
+    DateTime dataTraAnno = dataAttuale.AddYears(1);
+}
+
+<h3>La data di oggi è: @dataAttuale.ToString("yyyy/MM/dd/ HH:mm:ss")</h3>
+<h3>a. La data di 7 giorni fa: @dataPassata.ToString()</h3>
+<h3>b. Oggi è il giorno: @dataPassata.DayOfWeek.ToString()</h3>
+<h3>b. Il giorno tra un anno sarà: @dataTraAnno.DayOfWeek.ToString()</h3>
+<hr />
+
